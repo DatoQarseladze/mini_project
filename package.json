@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
     "nodemon": "^1.18.4",
     "pug-cli": "^1.0.0-alpha6"

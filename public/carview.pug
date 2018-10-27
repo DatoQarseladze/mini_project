@@ -3,21 +3,32 @@ html
    head
       meta(chartset='utf-8')
       title= title
-   body(style={background: '#fff'})
+      style.
+        body{
+            background: seagreen;
+            }
+        input{
+            display: flex;
+        }
+   body
    hr
-   #wrapper(style={ display: 'inline-block'})
+   #wrapper
     a(href="/")='Go Back'
     <br>
     a(href="/searchPage")='Search Page'
-    form(action="/savecar", method='POST')
+    form(action="/editcar", method='POST')
         h3='Manufacterer : '
-            input(type="text", name='manufacter')
+            input(type="text", value= manufacter, name='manufacter')
         h3='Model : '
-            input(type="text", name='model')
+            input(type="text", value= model, name='model')
         h3='Vin Code : '
-            input(type="text", name='vin', required)
+            input(type="text", value= vin, name='vin', required)
         h3='State Number : '
-            input(type="text", name='number', required)
+            input(type="text", value= number, name='number', required)
         h3='Color : '
-            input(type='text', name='color')
-        button(type='submit')='Add Car' 
+            input(type='text', value= color, name='color')
+        h3= 'Owner Name'
+            input(type="text" value= owner, name='owner')
+        h3= 'Owner SUrname'
+            input(type="text" value= ownerSurname, name='ownerSurname')
+        button(type='submit')='Edit Car' 

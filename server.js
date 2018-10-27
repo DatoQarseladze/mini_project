@@ -14,6 +14,7 @@ app.set('view engine', 'pug');
 let people = [];
 let cars = [];
 let id = -1;
+let carId = -1;
 
 app.get('/', (req, res) => {
     res.render('view', {
@@ -119,6 +120,8 @@ app.post('/savecar', (req, res) => {
         number: req.body.number,
         color: req.body.color,
         owner: req.body.owner,
+        ownerSurname: req.body.ownerSurname,
+        carId: ++carId
     };
     
     let surname = req.body.ownerSurname
@@ -194,6 +197,12 @@ app.post('/searchEdit', (req,res) =>{
   
 })
 
+app.post('/searchCar', (req,res) =>{
+    vincode = req.body.vincode;
+    const car = cars.find(something => Number(something.vin) === Number(vincode))
+    res.render('carview', car)
+})
+
 app.post('/edit', (req,res) =>{
     console.log(id); 
     const human = people.find(something => something.id === Number(id));
@@ -212,6 +221,18 @@ app.post('/delete', (req,res) =>{
   people.splice(id, 1)
   res.render('view')
 
+})
+
+app.post('/editcar', (req,res) =>{
+    let id = carId;
+    const car = cars.find(something => something.carId === Number(id))
+    car.manufacter = req.body.manufacter,
+    car.model = req.body.model,
+    car.number = req.body.number,
+    car.color = req.body.color,
+    car.owner = req.body.owner,
+    car.ownerSurname = req.body.ownerSurname
+    res.render('view')
 })
 
 app.post('/disable', (req,res) =>{

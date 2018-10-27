@@ -51,28 +51,44 @@ head
         #edit input{
             margin: 20px auto;
         }
+        #wrapper{
+            display:flex;
+            justify-content: space-around;
+        }
+        #container{
+            display:flex;
+            justify-content: space-around;
+        }
       
       
 body
    
     #img
         img(src="search.png", alt="")
-    #search
-        form(action='/searchName', method='GET')
-            h3='Name'
-                input(type="text" name='searchName' required)
-            h3='Surname'
-                input(type='text' name='searchSurname' required)
-            button(type='submit')='Search'
-        form(action='/searchPersonal', method='GET')
-            h3='Search User By Personal'
-                input(type='number', name='searchPersonalNumber')
-            button(type='submit')='Search'
-            a(href='/')='Back'
-      
-    #edit
-        form(action='searchEdit', method='POST')
-            h3= 'Search user by name for update'
-                input(type="text" name='searchText')
-                input(type="text" name='searchTextSurname')
+    #wrapper
+        #search
+            form(action='/searchName', method='GET')
+                h3='Name'
+                    input(type="text" name='searchName' required)
+                h3='Surname'
+                    input(type='text' name='searchSurname' required)
                 button(type='submit')='Search'
+        #searchTwo       
+            form(action='/searchPersonal', method='GET')
+                h3='Search User By Personal'
+                    input(type='number', name='searchPersonalNumber')
+                button(type='submit')='Search'
+                
+    #container  
+        #edit
+            form(action='/searchEdit', method='POST')
+                h3= 'Search user by name for update'
+                    input(type="text" name='searchText')
+                    input(type="text" name='searchTextSurname')
+                    button(type='submit')='Search'
+    
+        #editCar
+            form(action='/searchCar', method='POST')
+                h3= 'Search Car by VIN'
+                    input(type="number" name='vincode')
+                    button(type='submit')='Search'
