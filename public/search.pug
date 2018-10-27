@@ -1,0 +1,74 @@
+doctype
+html
+   head
+      meta(chartset='utf-8')
+      title= title
+      style.
+    
+        body{
+            background: seagreen;        }
+        
+        input{
+            display: flex;
+        }
+        a{
+            text-decoration: none;
+        
+        }
+
+        #wrapper{
+            display : flex;
+            justify-content : center;
+        }
+       
+        #img img{
+            border-radius : 50%;   
+            display: block;
+            margin: auto;       
+        }
+        input {
+            margin-top: 20px;
+            width: 320px;
+            height: 50px;
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        button{
+            display: block;
+            border: 0;
+            width: 270px;
+            padding: 10px;
+            margin: 20px auto;
+            color: #FFF;
+            background: red
+        }
+        h3{
+            text-align: center;
+            color: #fff
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+   body
+   hr
+   #wrapper
+   <br>
+    form(action="/delete", method='POST')
+        h3='Name'
+            input(type="text"  value= name name='name')
+        h3='Surname'
+            input(type="text" value=surname name='surname')
+        h3='Personal Number'
+            input(type='number'  value=personalNumber name='personalNumber')
+        h3='Car Names'
+        each car in cars
+            h3= car.manufacter
+                h3= car.model
+        button(type='submit')='Delete'
+    a(href="/")= 'Back'

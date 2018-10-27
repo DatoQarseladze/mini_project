@@ -1,0 +1,74 @@
+doctype
+head
+    meta(chartset='utf-8')
+    title= title
+    style.
+    
+        body{
+            background: seagreen;        }
+        
+        input{
+            display: flex;
+        }
+         
+        #wrapper{
+            display : flex;
+            justify-content : center;
+        }
+       
+        #img img{
+            border-radius : 50%;   
+            display: block;
+            margin: auto;       
+        }
+        input {
+            margin-top: 20px;
+            width: 270px;
+            height: 40px;
+            text-align: center;
+        }
+        button{
+            display: block;
+            border: 0;
+            width: 270px;
+            padding: 10px;
+            margin: 20px auto;
+            color: #FFF;
+            background: #8bbc37
+        }
+        
+        #car{
+            display : flex;
+            justify-content : center;
+        }
+        h3{
+            text-align: center;
+            color: #fff;
+        }
+        a{
+          text-decoration: none;
+          font-size: 30px;
+          color: #fff;
+          margin-left: 110px;
+        }
+      
+body
+    #img
+        img(src="car.png", alt="")
+    #car
+        form(action="/savecar", method='POST')
+            h3 Manufacterer
+                input(type="text", name='manufacter', placeholder='Make')
+            h3 Model
+                input(type="text", name='model', placeholder='Model')
+            h3 Vin Code
+                input(type="text", name='vin', required, placeholder='VIN')
+            h3 State Number
+                input(type="text", name='number', required, placeholder='State/Number')
+            h3 Color
+                input(type='text', name='color', placeholder='Color')
+            h3 Owner Name
+                input(type="text" name='owner' required, placeholder='Name')
+                input(type="text" name='ownerSurname' required, placeholder='Surname')
+                button(type='submit')='Add Car' 
+            a(href='/')='Back'

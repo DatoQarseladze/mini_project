@@ -1,0 +1,78 @@
+doctype
+head
+    meta(chartset='utf-8')
+    title= title
+    style.
+    
+        body{
+            background: seagreen;        }
+        
+        input{
+            display: flex;
+        }
+         
+        #search{
+            display : flex;
+            justify-content : space-around;
+        }
+       
+        #img img{ 
+            display: block;
+            margin: auto;       
+        }
+        input {
+            margin-top: 20px;
+            width: 320px;
+            height: 50px;
+            text-align: center;
+        }
+        h3{
+            text-align: center;
+        }
+        button{
+            display: block;
+            border: 0;
+            width: 270px;
+            padding: 10px;
+            margin: 20px auto;
+            color: #FFF;
+            background: #8bbc37
+        }
+        a{
+          text-decoration: none;
+          font-size: 30px;
+          color: #fff;
+          margin-left: 130px;
+        }
+        #edit h3{
+            text-align: center;
+            margin-top: 40px;
+        }
+        #edit input{
+            margin: 20px auto;
+        }
+      
+      
+body
+   
+    #img
+        img(src="search.png", alt="")
+    #search
+        form(action='/searchName', method='GET')
+            h3='Name'
+                input(type="text" name='searchName' required)
+            h3='Surname'
+                input(type='text' name='searchSurname' required)
+            button(type='submit')='Search'
+        form(action='/searchPersonal', method='GET')
+            h3='Search User By Personal'
+                input(type='number', name='searchPersonalNumber')
+            button(type='submit')='Search'
+            a(href='/')='Back'
+      
+    #edit
+        form(action='searchEdit', method='POST')
+            h3= 'Search user by name for update'
+                input(type="text" name='searchText')
+                input(type="text" name='searchTextSurname')
+                button(type='submit')='Search'

@@ -1,0 +1,47 @@
+doctype
+html
+head
+      meta(chartset='utf-8')
+      link(rel="icon", type='image/png', href="images/favicon.ico")
+      link(rel="stylesheet", type='text/css', href="images/favicon.ico")
+      title= title
+      style. 
+        table{
+        border: 2px solid seagreen;
+        margin: 0 auto;
+        width: 100%;
+        }
+        tr{
+         text-align: center;
+         color: #fff;
+         font-size: 30px;
+        }
+        a{
+            text-decoration: none;
+            color: darksalmon;
+            font-size: 30px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+body(style={background: 'seagreen'})
+    hr
+    #wrapper
+        table
+            thead
+                tr
+                    th= 'Name'
+                    th= 'Surname'
+                    th= 'ID/Num'
+                    th= 'Father Name'
+                    th= 'BDay'
+            tbody
+            each person in people
+                tr
+                    td= person.name
+                    td= person.surname
+                    td= person.personalNumber
+                    td= person.fatherName
+                    td= person.bday
+        a(href="/")= 'Back'

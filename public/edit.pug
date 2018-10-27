@@ -1,0 +1,50 @@
+doctype
+head
+    meta(chartset='utf-8')
+    title= title
+    style.
+        body{
+            background: seagreen;
+        }
+       
+        h3{
+            display:flex;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            display: block;
+            border: 0;
+            width: 270px;
+            padding: 10px;
+            margin: 20px auto;
+            color: #FFF;
+            background: #8bbc37
+        }
+    
+body
+    hr
+    a(href="/")= 'Get Back'
+    #wrapper
+    form(action='edit', method='POST')
+        h3= 'Name'
+            input(type="text"  value= name name='name')
+        h3= 'Surname' 
+            input(type="text" value=surname name='surname')
+        h3= 'ID/Num'
+            input(type='number'  value=personalNumber name='personalNumber')
+        h3='Father Name' 
+            input(type="text", value=fatherName  name='fatherName' )
+        h3= 'Bday'
+            input(type="date" name='bday')
+        button(type='submit')='Edit'
+    form(action='disable', method='POST')
+        button(type='submit')='Disable'
+

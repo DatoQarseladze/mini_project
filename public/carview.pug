@@ -1,0 +1,23 @@
+doctype
+html
+   head
+      meta(chartset='utf-8')
+      title= title
+   body(style={background: '#fff'})
+   hr
+   #wrapper(style={ display: 'inline-block'})
+    a(href="/")='Go Back'
+    <br>
+    a(href="/searchPage")='Search Page'
+    form(action="/savecar", method='POST')
+        h3='Manufacterer : '
+            input(type="text", name='manufacter')
+        h3='Model : '
+            input(type="text", name='model')
+        h3='Vin Code : '
+            input(type="text", name='vin', required)
+        h3='State Number : '
+            input(type="text", name='number', required)
+        h3='Color : '
+            input(type='text', name='color')
+        button(type='submit')='Add Car' 

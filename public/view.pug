@@ -1,0 +1,71 @@
+doctype
+head
+    meta(chartset='utf-8')
+    title= title
+    style.
+    
+        body{
+            background: seagreen;        }
+        
+        input{
+            display: flex;
+        }
+         
+        #wrapper{
+            display : flex;
+            justify-content : center;
+        }
+       
+        #img img{
+            border-radius : 50%;   
+            display: block;
+            margin: auto;       
+        }
+        input {
+            margin-top: 20px;
+            width: 320px;
+            height: 50px;
+            text-align: center;
+        }
+        button{
+            display: block;
+            border: 0;
+            width: 270px;
+            padding: 10px;
+            margin: 20px auto;
+            color: #FFF;
+            background: #8bbc37
+        }
+        #content{
+            display:flex;
+            justify-content: space-around;
+        }
+        #allpeople a{
+            display: flex;
+            justify-content: center;
+       
+        }
+    
+      
+body
+    #img
+        img(src="download.png", alt="")
+    #wrapper
+        form( action="/save", method='POST')
+            input(type="text" name='name', required placeholder='name')
+            input(type="text" name='surname', required placeholder='surname')
+            input(type='number'  name='personalNumber', required placeholder='ID')
+            input(type="text", name='fatherName', placeholder= 'Father Name')
+            input(type="date" name='bday', placeholder='BD' )
+            button(type='submit')= 'Add'
+            
+    #content
+        #car 
+            a(style={'color': '#fff', 'text-decoration':'none', 'font-size':'20px'})(href="/car")= 'Add Car'
+    
+        #search
+            a(style={'color': '#fff', 'text-decoration':'none', 'font-size':'20px'})(href="/search")= 'Search People'
+   
+
+    #allpeople
+            a(style={'color': '#fff', 'text-decoration':'none', 'font-size':'30px'})(href="/people")= 'Database'
